@@ -1,5 +1,5 @@
 import TaskCard from "./TaskCard";
-import { columns } from "../data/task";
+import { columns } from "../Data/task";
 
 const PlusIcon = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">

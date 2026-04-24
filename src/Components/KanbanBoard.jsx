@@ -1,4 +1,4 @@
-import { columns } from "../data/task";
+import { columns } from "../Data/task";
 import KanbanColumn from "./KanbanColumn";
 
 export default function KanbanBoard() {

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { projects } from "../data/task";
+import { projects } from "../Data/task";
 import Home from "../assets/icons/Homeicon.svg";
 import Message from "../assets/icons/Messages.svg";
 import Task from "../assets/icons/taskicon.svg";

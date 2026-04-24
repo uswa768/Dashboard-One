@@ -1,5 +1,4 @@
-import KanbanBoard from "../components/KanbanBoard";
-
+import KanbanBoard from"../Components/KanbanBoard"
 export default function Dashboard() {
   return <KanbanBoard />;
 }
