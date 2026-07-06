@@ -23,20 +23,35 @@ const members = [
   { img: memberD },
 ];
 
-export default function TopBar() {
+export default function TopBar({ onMenuClick }) {
   return (
     <header className="bg-white border-b border-gray-100 px-6 py-3 flex-shrink-0">
 
       {/* Top Row - Search + User */}
       <div className="flex items-center justify-between mb-4">
 
-        {/* Search */}
-        <div className="flex items-center gap-2 bg-gray-50 rounded-xl px-4 py-2 w-72 border border-gray-100">
-          <img src={searchIcon} alt="" className="w-4 h-4 opacity-50" />
-          <input
-            className="bg-transparent text-sm text-gray-500 outline-none w-full placeholder-gray-400"
-            placeholder="Search for anything..."
-          />
+        {/* Search & Menu */}
+        <div className="flex items-center gap-2">
+          {/* Hamburger Menu Mobile */}
+          <button 
+            className="md:hidden p-2 -ml-2 text-gray-500 hover:bg-gray-100 rounded-lg transition-colors"
+            onClick={onMenuClick}
+            aria-label="Open sidebar"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          
+          <div className="hidden md:flex items-center gap-2 bg-gray-50 rounded-xl px-4 py-2 w-72 border border-gray-100">
+            <img src={searchIcon} alt="" className="w-4 h-4 opacity-50" />
+            <input
+              className="bg-transparent text-sm text-gray-500 outline-none w-full placeholder-gray-400"
+              placeholder="Search for anything..."
+            />
+          </div>
         </div>
 
         {/* Right - icons + user */}
@@ -70,7 +85,7 @@ export default function TopBar() {
       </div>
 
       {/* Bottom Row - Title + Actions */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-0">
 
         {/* Title */}
         <div className="flex items-center gap-3">
@@ -87,7 +102,8 @@ export default function TopBar() {
         </div>
 
         {/* Right Actions */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 overflow-x-auto pb-2 w-full md:w-auto md:pb-0 hide-scrollbar">
+          <div className="flex items-center gap-3 min-w-max">
 
           {/* Invite + Avatars */}
           <div className="flex items-center gap-2">
@@ -148,6 +164,7 @@ export default function TopBar() {
             </button>
           </div>
 
+        </div>
         </div>
       </div>
     </header>

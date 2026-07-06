@@ -25,7 +25,7 @@ const navItems = [
   { label: "Settings", to: "/settings", icon: <SettingsIcon /> },
 ];
 
-export default function Sidebar() {
+export default function Sidebar({ onClose }) {
   return (
     <aside className="w-[240px] bg-white h-full flex flex-col border-r border-gray-100 shadow-sm flex-shrink-0">
 
@@ -40,7 +40,21 @@ export default function Sidebar() {
           </svg>
         </div>
         <span className="font-bold text-gray-900 text-[15px] tracking-tight">Project M.</span>
-        <button className="ml-auto text-gray-400 hover:text-gray-600">
+        
+        {/* Mobile Close Button */}
+        <button 
+          className="md:hidden ml-auto text-gray-400 hover:text-gray-600 p-1"
+          onClick={onClose}
+          aria-label="Close sidebar"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+
+        {/* Desktop Collapse Button */}
+        <button className="hidden md:block ml-auto text-gray-400 hover:text-gray-600">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <polyline points="15 18 9 12 15 6" />
           </svg>
